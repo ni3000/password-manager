@@ -14,7 +14,7 @@ function Manager() {
 
                 <p className='text-green-900 text-lg text-center'>You own password manager</p>
 
-                <div className="flex flex-col p-4 text-black gap-3">
+                <div className="flex flex-col p-4 text-black gap-3 items-center">
 
                     <input className='rounded-full border border-green-500 w-full p-4 py-1' type="text" name="" id="" />
                     <div className="flex w-full justify-between gap-8">
