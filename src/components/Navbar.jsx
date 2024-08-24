@@ -1,4 +1,3 @@
-import React from 'react'
 
 function Navbar() {
     return (
@@ -9,13 +8,17 @@ function Navbar() {
                     <span>Pass</span>
                     <span className='text-green-700'>OP/&gt;</span>
                 </div>
-                <ul>
+                {/* <ul>
                     <li className='flex gap-4'>
                         <a className='hover:font-bold' href='#'>Home</a>
                         <a className='hover:font-bold' href='#'>About Us</a>
                         <a className='hover:font-bold' href='#'>Contact Us</a>
                     </li>
-                </ul>
+                </ul> */}
+                <button className="text-white bg-green-700 my-5 rounded-full flex gap-2 justify-between items-center">
+                    <img className="invert w-8 p-1" src="/icons/github.png" alt="Github Logo" />
+                    <span className="font-bold px-1">Github</span>
+                </button>
             </div>
         </nav>
     )
