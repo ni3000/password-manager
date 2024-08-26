@@ -16,7 +16,7 @@ function Navbar() {
                     </li>
                 </ul> */}
                 <button className="text-white bg-green-700 my-5 rounded-full flex gap-2 justify-between items-center">
-                    <img className="invert w-8 p-1" src="/icons/github.png" alt="Github Logo" />
+                    <img className="invert w-8 p-1" src="/icons/Github.png" alt="Github Logo" />
                     <span className="font-bold px-1">Github</span>
                 </button>
             </div>
