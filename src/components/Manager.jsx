@@ -1,5 +1,6 @@
-import React from "react"
-import { useRef, useState, useEffect } from "react"
+import { React, useRef, useState, useEffect } from "react"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Manager() {
     const ref = useRef()
@@ -16,7 +17,17 @@ function Manager() {
     }, [])
 
     const copyText = (text) => {
-        alert("Text copied to clipboard: " + text)
+        toast('Copied to clipboard!', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            });
+
         navigator.clipboard.writeText(text);
     }
 
@@ -45,6 +56,22 @@ function Manager() {
 
     return (
         <>
+
+            <ToastContainer
+                position="top-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+                transition="Bounce"
+            />
+            <ToastContainer />
+
             <div className="absolute top-0 z-[-2] h-screen w-screen bg-green-50 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
 
             <div className=" mycontainer">
@@ -93,11 +120,11 @@ function Manager() {
                                         <div className="flex items-center justify-center">
                                             <a href={items.site} target="_blank">
                                                 <span>{items.site}</span></a>
-                                            <div className="lordiconcopy size-7 cursor-pointer" onClick={()=>{copyText(items.site)}}>
+                                            <div className="lordiconcopy size-7 cursor-pointer" onClick={() => { copyText(items.site) }}>
                                                 <lord-icon
                                                     src="https://cdn.lordicon.com/depeqmsz.json"
                                                     trigger="hover"
-                                                    style={{ "width": "20px", "height": "20px", "paddingTop": "4px","paddingLeft":"4px" }}>
+                                                    style={{ "width": "20px", "height": "20px", "paddingTop": "4px", "paddingLeft": "4px" }}>
                                                 </lord-icon>
                                             </div>
                                         </div>
@@ -105,11 +132,11 @@ function Manager() {
                                     <td className="py-2 border border-white text-center ">
                                         <div className="flex items-center justify-center">
                                             <span>{items.username}</span>
-                                            <div className="lordiconcopy size-7 cursor-pointer" onClick={()=>{copyText(items.username)}}>
+                                            <div className="lordiconcopy size-7 cursor-pointer" onClick={() => { copyText(items.username) }}>
                                                 <lord-icon
                                                     src="https://cdn.lordicon.com/depeqmsz.json"
                                                     trigger="hover"
-                                                    style={{ "width": "20px", "height": "20px", "paddingTop": "4px","paddingLeft":"4px" }}>
+                                                    style={{ "width": "20px", "height": "20px", "paddingTop": "4px", "paddingLeft": "4px" }}>
                                                 </lord-icon>
                                             </div>
                                         </div>
@@ -117,11 +144,11 @@ function Manager() {
                                     <td className="py-2 border border-white text-center ">
                                         <div className="flex items-center justify-center">
                                             <span>{items.password}</span>
-                                            <div className="lordiconcopy size-7 cursor-pointer" onClick={()=>{copyText(items.password)}}>
+                                            <div className="lordiconcopy size-7 cursor-pointer" onClick={() => { copyText(items.password) }}>
                                                 <lord-icon
                                                     src="https://cdn.lordicon.com/depeqmsz.json"
                                                     trigger="hover"
-                                                    style={{ "width": "20px", "height": "20px", "paddingTop": "4px","paddingLeft":"4px" }}>
+                                                    style={{ "width": "20px", "height": "20px", "paddingTop": "4px", "paddingLeft": "4px" }}>
                                                 </lord-icon>
                                             </div>
                                         </div>
