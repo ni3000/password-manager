@@ -15,6 +15,10 @@ function Manager() {
 
     }, [])
 
+    const copyText = (text) => {
+        alert("Text copied to clipboard: " + text)
+        navigator.clipboard.writeText(text);
+    }
 
     const showPassword = () => {
         passwordRef.current.type = "text"
@@ -85,17 +89,45 @@ function Manager() {
                         <tbody className="bg-green-100">
                             {passwordArray.map((items, index) => {
                                 return <tr key={index}>
-                                    <td className="py-2 border border-white text-center w-32"><a href={items.site} target="_blank">{items.site}</a>
-                                        <lord-icon
-                                            src="https://cdn.lordicon.com/depeqmsz.json"
-                                            trigger="hover">
-                                        </lord-icon>
+                                    <td className="py-2 border border-white text-center ">
+                                        <div className="flex items-center justify-center">
+                                            <a href={items.site} target="_blank">
+                                                <span>{items.site}</span></a>
+                                            <div className="lordiconcopy size-7 cursor-pointer" onClick={()=>{copyText(items.site)}}>
+                                                <lord-icon
+                                                    src="https://cdn.lordicon.com/depeqmsz.json"
+                                                    trigger="hover"
+                                                    style={{ "width": "20px", "height": "20px", "paddingTop": "4px","paddingLeft":"4px" }}>
+                                                </lord-icon>
+                                            </div>
+                                        </div>
                                     </td>
-                                    <td className="py-2 border border-white text-center w-32">{items.username}</td>
-                                    <td className="py-2 border border-white text-center w-32">{items.password}</td>
+                                    <td className="py-2 border border-white text-center ">
+                                        <div className="flex items-center justify-center">
+                                            <span>{items.username}</span>
+                                            <div className="lordiconcopy size-7 cursor-pointer" onClick={()=>{copyText(items.username)}}>
+                                                <lord-icon
+                                                    src="https://cdn.lordicon.com/depeqmsz.json"
+                                                    trigger="hover"
+                                                    style={{ "width": "20px", "height": "20px", "paddingTop": "4px","paddingLeft":"4px" }}>
+                                                </lord-icon>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td className="py-2 border border-white text-center ">
+                                        <div className="flex items-center justify-center">
+                                            <span>{items.password}</span>
+                                            <div className="lordiconcopy size-7 cursor-pointer" onClick={()=>{copyText(items.password)}}>
+                                                <lord-icon
+                                                    src="https://cdn.lordicon.com/depeqmsz.json"
+                                                    trigger="hover"
+                                                    style={{ "width": "20px", "height": "20px", "paddingTop": "4px","paddingLeft":"4px" }}>
+                                                </lord-icon>
+                                            </div>
+                                        </div>
+                                    </td>
                                 </tr>
                             })}
-
                         </tbody>
                     </table>}
                 </div>
