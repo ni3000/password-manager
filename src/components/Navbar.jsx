@@ -1,5 +1,10 @@
 
 function Navbar() {
+
+    const handleButton = () => {
+        console.log("Clicked Github link")
+    }
+
     return (
         <nav className='bg-slate-800 text-white'>
             <div className="mycontainer flex justify-between items-center px-4 py-5 h-14 ">
@@ -15,7 +20,7 @@ function Navbar() {
                         <a className='hover:font-bold' href='#'>Contact Us</a>
                     </li>
                 </ul> */}
-                <button className="text-white bg-green-700 my-5 rounded-full flex gap-2 justify-between items-center">
+                <button className="text-white bg-green-700 my-5 rounded-full flex gap-2 justify-between items-center" onClick={handleButton}>
                     <img className="invert w-8 p-1" src="/icons/Github.png" alt="Github Logo" />
                     <span className="font-bold px-1">Github</span>
                 </button>
